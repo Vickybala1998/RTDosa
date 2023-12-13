@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="head">
+        <div class="row">
+            <div class="col-1">
+                <p>RT Dosa</p>
+            </div>
+            <div class="col-2">
+                <nav>
+                    <ul>
+                        <li>
+                            <button class="cart-button">
+                            <a href=#cart>
+                                <i class="bi bi-cart fs-3"></i>
+                            </a>
+                        </button></li>
+                    </ul> 
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="menu" >
+        <div class="starters">
+            <table class="table table-hover table-hover-pointer">
+                <thead>
+                    <tr>
+                        <th><b>Veg Starters</b></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Veg Rolls" data-price="2.99">Veg Rolls</td>
+                        <td>2.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Mutton Rolls" data-price="3.99">Mutton Rolls</td>
+                        <td>3.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)"> 
+                        <td data-item="Paneer Manchurian" data-price="6.99">Paneer Manchurian</td>
+                        <td>6.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Gobi Manchurian" data-price="6.99">Gobi Manchurian</td>
+                        <td>6.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Chilli Gobi" data-price="7.50">Chilli Gobi</td>
+                        <td>7.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Chilli Paneer" data-price="7.50">Chilli Paneer</td>
+                        <td>7.50</td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <table class="table table-hover table-hover-pointer">
+                <thead>
+                    <tr>
+                        <th><b>Non-Veg Starters</b></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Veg Rolls" data-price="2.99">Veg Rolls</td>
+                        <td>2.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Mutton Rolls" data-price="3.99">Mutton Rolls</td>
+                        <td>3.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)"> 
+                        <td data-item="Paneer Manchurian" data-price="6.99">Paneer Manchurian</td>
+                        <td>6.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Gobi Manchurian" data-price="6.99">Gobi Manchurian</td>
+                        <td>6.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Chilli Gobi" data-price="7.50">Chilli Gobi</td>
+                        <td>7.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Chilli Paneer" data-price="7.50">Chilli Paneer</td>
+                        <td>7.50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="starters">
+            <table class="table table-hover table-hover-pointer">
+                <thead>
+                    <tr>
+                        <th><b>Veg Mains</b></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Daal Curry" data-price="5.50">Veg Rolls</td>
+                        <td>5.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Paneer Butter Masala" data-price="6.50">Mutton Rolls</td>
+                        <td>6.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)"> 
+                        <td data-item="Spicy Potato Curry" data-price="6.99">Paneer Manchurian</td>
+                        <td>6.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Channa Masala" data-price="6.50">Gobi Manchurian</td>
+                        <td>6.50</td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <div class="row">
+                <div class="col-sm">
+                    <img class="gal-img" src="gal-img-3.jpg">
+                </div>
+                <div class="col-sm">
+                    <img class="gal-img" src="gal-img-4.jpg">
+                </div>
+                <div class="col-sm">
+                    <img class="gal-img" src="gal-img-5.jpg">
+                </div>
+                <div class="col-sm">
+                    <img class="gal-img" src="vegnoodles.jpeg">
+                </div>
+            </div>
+        </div>
+        <div class="starters">
+            <table class="table table-hover table-hover-pointer">
+                <thead>
+                    <tr>
+                        <th><b>Non-Veg Mains</b></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Chicken Masala" data-price="7.50">Veg Rolls</td>
+                        <td>7.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Madras Chicken Curry" data-price="8.00">Mutton Rolls</td>
+                        <td>8.00</td>
+                    </tr>
+                    <tr onclick="addToCart(this)"> 
+                        <td data-item="Madras Lamb Curry" data-price="8.50">Paneer Manchurian</td>
+                        <td>8.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="King Prawn Curry" data-price="9.00">Gobi Manchurian</td>
+                        <td>9.00</td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table><br>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th><b>Breads</b></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Chapati" data-price="1.50">Veg Rolls</td>
+                        <td>1.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Parotta" data-price="1.99">Mutton Rolls</td>
+                        <td>1.99</td>
+                    </tr>
+                    <tr onclick="addToCart(this)"> 
+                        <td data-item="Veechu Parotta" data-price="2.50">Paneer Manchurian</td>
+                        <td>2.50</td>
+                    </tr>
+                    <tr onclick="addToCart(this)">
+                        <td data-item="Egg Veechu Parotta" data-price="2.99">Gobi Manchurian</td>
+                        <td>2.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="cart" id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div class="checkout">
+            <p>Total: £<span id="total">0.00</span></p>
+            <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <div>
+        <button onclick="goToHome()" class="btn btn-primary">back</button>
+    </div> 
+</body>

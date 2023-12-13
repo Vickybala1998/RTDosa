@@ -1,0 +1,305 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.banner{
+    background-image: url("Banner.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width:100vw;
+    padding: 5vh 0;
+}
+
+    
+h1{
+    display:inline-block;
+    font-size: 2.5em;
+    color: white;
+    margin-top: 20%;
+}
+.table p{
+    font-size: 1em;
+    color:black;
+}
+.table h1{
+    font-size: 1em;
+    color:black;
+}
+
+p{
+    font-size: 2em;
+    color:white;
+}
+.scrolled{
+    position: fixed;
+    background-color: rgb(224, 65, 65);
+    width:100vw;
+    top:0;
+    padding: 0;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+li{
+    padding: 0px 10px;
+}
+.banner a{
+    color:white;
+    padding: 0px 10px;
+    font-size: 1.5em;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.homeNav a:hover{
+    background-color: white;
+    color:rgb(153, 103, 3);
+    transition: 0.5s;
+    border-radius: 30%;
+}
+.TopPicks{
+    position: relative;
+    background-color:rgba(10,10,10,0.4);
+    padding:2% 0;
+}
+.TopPicks::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("Toppicksbg.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index:-1;
+    opacity: 0.2;}
+
+.TopPicks p{
+    color:black;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.menuBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5%;
+}
+.menuBtn button{
+    display: flex;
+    justify-content: center;
+    background-color: brown;
+    padding: 1%;
+    width: 25vw;
+    height: auto;
+    border: none;
+    box-shadow: 5px 5px rgb(218, 112, 112);
+    color: white;
+    font-size: 1.5em;
+}
+
+.TopPicks button:hover{
+    transform: scale(1.1);
+}
+.carousel-inner{
+    width:70vw;
+    margin-left: 20vw;
+}
+.carousel-item p{
+    color:black;
+    font-size: 1em;
+    font-weight: normal
+}
+.TopPicks .col{
+    height: 70vh;
+    width:auto;
+    border: 1px  solid black;
+    border-radius:5px ;
+    box-shadow: 5px 5px 7px black;
+    margin: 0 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.col:hover{
+    transform: scale(1.05); 
+}
+
+img{
+    width:150px;
+    height: 150px;
+}
+.contact{
+    position: relative;
+    background-color: rgb(216, 208, 208,0.7);
+}
+
+.contactCard{
+    height: 60vh;
+    width:auto;
+    margin: 40px 40px;
+    padding:0 40px;
+    text-align: center;
+
+}
+.contactCard:hover{
+    border: 1px  solid white;
+    border-radius:5px ;
+    background-color:white;
+    box-shadow:5px 5px 7px rgb(71, 70, 70);
+}
+.contactCard p{
+    color:black;
+    font-size: 1em;
+}
+.Aboutus{
+    width:100vw;
+    height: 50vh;
+    align-items: center;
+    background-image: url("aboutbg.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.Aboutus h2{
+color: black;
+text-align: center;
+}
+.Aboutus p{
+    color:rgb(128, 43, 43);
+    font-size: 1.5em;
+    font-family: "Sofia";
+    text-align: center;
+    margin-top: 2%;
+    animation: slideIn 2s ease-out;
+    }
+    .gallery{
+        margin-bottom: 20px;
+    }
+
+.gallery .row{
+    margin:2px;
+}
+
+.gallery h2{
+    color:black;
+    text-align: center;
+}
+
+.col-lg{
+    margin: 2px;
+}
+.col-sm{
+    margin-right: 2px;
+    object-fit: contain;
+}
+.gal-img-sm{
+    width: 100%;
+    height: 50vh;
+}
+.gal-img-lg{
+    width:100%;
+    height: 50vh;
+}
+
+.starters{
+    display: flex;
+    width:100vw;
+}
+.table{
+    margin-right: 5vw;
+}
+
+.table tr{
+    cursor: pointer;
+}
+.topScroll{
+            position:fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #504646;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            font-weight: bolder;
+}
+
+/*orderonline page css*/
+.head{
+    background-color: rgb(224, 65, 65);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width:100vw;
+}
+
+.head .col-1{
+    width:80vw;
+}
+
+.menu{
+    margin-top: 10vw;
+}
+.cart-button{
+    background: none;
+    border: none;
+    color:white;
+}
+.cart-button a{
+    text-decoration: none;
+    color:white;
+}
+.cart-button i{
+    size: 150px;
+}
+
+/*view cart*/
+.cart{
+    width: 30%;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    color:black;
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout p{
+    font-size: 1.5em;
+    color:black
+}
+
+.btn-primary{
+    background-color:  rgb(224, 65, 65);
+    border: none;
+}
+

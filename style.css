@@ -14,7 +14,11 @@ body{
         transform: translateX(0);
     }
 }
-
+@media screen and (min-width: 768px) {
+    .contactCard:hover {
+        width: 50vw; /* Set the width to 50% of the viewport width on hover */
+    }
+}
 .banner{
     background-color:rgba(10,10,10,0.4);
     height: 90vh;
@@ -228,7 +232,6 @@ font-family: "Lobster";
     .gallery{
         margin-bottom: 20px;
         width:100vw;
-        background-color: black;
     }
 
 .gallery h1{
@@ -377,13 +380,18 @@ body{
         font-size: 0.8em;
     }
     .contact{
-        height:100%;}
+        height:100%;
+    }
 
     .contactCard{
         height: auto;
         font-size: 1em;
-        width: 100%;
-        margin-left:15vw;
+        width: auto;
+    }
+    .contact .row{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .contactCard p{
         text-wrap: nowrap;
@@ -434,9 +442,6 @@ body{
         margin-bottom:2%;
     }
 
-    .contact .row{
-        display:inline-block;
-        position: relative;
-    }
+  
 }
 

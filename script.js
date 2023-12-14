@@ -71,3 +71,6 @@ function updateCart(){
 
   
 }
+function checkout(){
+    alert("your order placed successfully")
+}

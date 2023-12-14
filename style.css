@@ -298,6 +298,10 @@ body{
     width:100vw;
     margin-right: 0;
 }
+.head p{
+    color:white;
+    font-weight: bold;
+}
 
 .head .col-1{
     width:80vw;

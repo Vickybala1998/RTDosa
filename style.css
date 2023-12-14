@@ -95,7 +95,6 @@ li{
 
 .homeNav a:hover{
     background-color: white;
-    color:rgb(153, 103, 3);
     transition: 0.5s;
     border-radius: 30%;
 }
@@ -197,6 +196,7 @@ img{
     text-align: center;
 }
 .contactCard:hover{
+    width:auto;
     border: 1px  solid white;
     border-radius:5px ;
     background-color:white;

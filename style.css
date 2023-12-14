@@ -5,6 +5,7 @@ body{
     overflow-x: hidden;
 }
 
+
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -22,14 +23,18 @@ body{
     height: 90vh;
     width:100vw;
     padding: 5vh 0;
+    position: relative;
 }
 
     
-h1{
+.banner h1{
     display:inline-block;
-    font-size: 2.5em;
+    font-size: 3em;
     color: white;
-    margin-top: 20%;
+    font-family: "Lobster";
+    text-shadow: 3px 2px brown;
+    margin-left:5%;
+    margin-top:5%;
 }
 .table p{
     font-size: 1em;
@@ -40,9 +45,12 @@ h1{
     color:black;
 }
 
-p{
+.banner h2{
+    display:block;
     font-size: 2em;
     color:white;
+    margin-left:5%;
+    font-family:"Catamaran";
 }
 .scrolled{
     position: fixed;
@@ -79,6 +87,7 @@ li{
     position: relative;
     background-color:rgba(10,10,10,0.4);
     padding:2% 0;
+    width:100vw;
 }
 .TopPicks::before {
     content: "";
@@ -93,6 +102,12 @@ li{
     background-position: center;
     z-index:-1;
     opacity: 0.2;}
+
+    .TopPicks h1{
+        color: black;
+        text-align: center;
+        font-family: "Lobster";
+        }
 
 .TopPicks p{
     color:black;
@@ -154,6 +169,7 @@ img{
 .contact{
     position: relative;
     background-color: rgb(216, 208, 208,0.7);
+    width: 100vw;
 }
 
 .contactCard{
@@ -162,7 +178,6 @@ img{
     margin: 40px 40px;
     padding:0 40px;
     text-align: center;
-
 }
 .contactCard:hover{
     border: 1px  solid white;
@@ -170,6 +185,7 @@ img{
     background-color:white;
     box-shadow:5px 5px 7px rgb(71, 70, 70);
 }
+
 .contactCard p{
     color:black;
     font-size: 1em;
@@ -183,9 +199,10 @@ img{
     background-size: cover;
     background-position: center;
 }
-.Aboutus h2{
+.Aboutus h1{
 color: black;
 text-align: center;
+font-family: "Lobster";
 }
 .Aboutus p{
     color:rgb(128, 43, 43);
@@ -197,25 +214,23 @@ text-align: center;
     }
     .gallery{
         margin-bottom: 20px;
+        width:100vw;
     }
 
-.gallery .row{
-    margin:2px;
-}
-
-.gallery h2{
+.gallery h1{
     color:black;
     text-align: center;
+    font-family: "Lobster";
 }
 
 .col-lg{
-    margin: 2px;
+    margin-left: 2px;
 }
 .col-sm{
     margin-right: 2px;
     object-fit: contain;
 }
-.gal-img-sm{
+.gal-img-sm {
     width: 100%;
     height: 50vh;
 }
@@ -247,7 +262,18 @@ text-align: center;
             display: none;
             font-weight: bolder;
 }
+.map{
+    height: 30vh;
+}
 
+.footer{
+    width:100vw;
+    height: auto;
+    text-align: left;
+    background-color: black;
+    color:white;
+    margin-bottom: 0;
+}
 /*orderonline page css*/
 .head{
     background-color: rgb(224, 65, 65);
@@ -301,5 +327,69 @@ text-align: center;
 .btn-primary{
     background-color:  rgb(224, 65, 65);
     border: none;
+}
+
+@media screen and (max-width:750px){
+    .banner{
+        height: 45vh;
+        width:100vw;
+        padding: 2.5vh 0;
+    }
+    h1{
+        font-size: 1.5em;
+        color:white;
+    }
+    .banner p{
+        font-size: 1em;
+    }
+    .homeNav a{
+        font-size: 0.8em;
+    }
+    .contactCard{
+        height: 35vh;
+        font-size: 1em;
+    }
+    .TopPicks .col{
+        height: auto;
+    }
+    .menuBtn button{
+        font-size: 0.8em;
+    }
+    .Aboutus{
+        height: auto;
+        padding-bottom:2%;
+        width: 100vw;
+    }
+    .Aboutus p{
+        font-size: 1em;
+        text-wrap: wrap;
+    }
+
+    .col-lg{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2px;
+        width: 100vw;
+    }
+    .col-sm{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2px;
+        width: 100vw;
+    }
+    .gal-img-sm {
+        margin-bottom: 1.5px;
+        width:50vw;
+        height: 25vh;
+    }
+    .gal-img-lg{
+        margin-bottom: 1.5px;
+        width:50vw;
+        height: 25vh;
+    }
+    .map{
+        width:50vw;
+    }
+    
 }
 

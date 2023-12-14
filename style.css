@@ -151,7 +151,7 @@ li{
 }
 .carousel-inner{
     width:70vw;
-    margin-left: 20vw;
+    margin-left: 15vw;
 }
 .carousel-item p{
     color:black;
@@ -228,6 +228,7 @@ font-family: "Lobster";
     .gallery{
         margin-bottom: 20px;
         width:100vw;
+        background-color: black;
     }
 
 .gallery h1{
@@ -379,10 +380,13 @@ body{
         height:100%;}
 
     .contactCard{
-        height: 50vh;
+        height: auto;
         font-size: 1em;
-        width: 50vw;
-        margin-left:50%;
+        width: 100%;
+        margin-left:15vw;
+    }
+    .contactCard p{
+        text-wrap: nowrap;
     }
     .TopPicks .row{
         display: block;
@@ -399,7 +403,7 @@ body{
         width: 100vw;
     }
     .Aboutus p{
-        font-size: 1em;
+        font-size: 1.5em;
         text-wrap: wrap;
     }
     
@@ -426,7 +430,8 @@ body{
         height: 25vh;
     }
     .map{
-        width:40vw;
+        width:35vw;
+        margin-bottom:2%;
     }
 
     .contact .row{

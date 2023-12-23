@@ -453,6 +453,10 @@ body{
     .contactCard p{
         text-wrap: nowrap;
     }
+    img{
+        width:35vw;
+        height: 35vw;
+    }
     .TopPicks .row{
         display: block;
     }

@@ -1,15 +1,132 @@
 
+    document.addEventListener('DOMContentLoaded',function(){
+        const personSelect=document.getElementById('personSelect')
+        const option=document.createElement('option');
+        option.value=0;
+        option.text='select no of persons';
+        personSelect.appendChild(option);
+
+        for(let i=2;i<=10;i++){
+            const option=document.createElement('option');
+            option.value=i;
+            option.text=i+'persons';
+            personSelect.appendChild(option);
+        }
+    })
+
+    document.addEventListener('DOMContentLoaded',function(){
+        const dateSelect=document.getElementById('dateSelect');
+        const currentDate=new Date()
+        const option=document.createElement('option');
+        option.value=0;
+        option.text='select a date';
+        dateSelect.appendChild(option);
+
+        const timeSelect=document.getElementById('timeSelect');
+        const options=document.createElement('option');
+        options.value=0;
+        options.text='Select a Time';
+        timeSelect.appendChild(options);
+
+        for(let i=0;i<=20;i++){
+            const date=new Date(currentDate);
+            date.setDate(currentDate.getDate()+i);
+            const option=document.createElement('option');
+            if(date.getDay()==2){
+                option.value=2;
+                option.text='Closed';
+            }
+            else{
+                option.value=formatDate(date);
+                option.text=formatDate(date);
+            }
+           
+            dateSelect.appendChild(option);
+        }
+
+        dateSelect.addEventListener('change',function(){
+            const selectedValue=dateSelect.value;
+            populateTime(selectedValue);
+        })
+    })
+
+    function populateTime(selectedValue){
+        const timeSelect=document.getElementById('timeSelect');
+        
+        timeSelect.innerHTML = '';
+        const option=document.createElement('option');
+        option.value=0;
+        option.text='Select a Time';
+        timeSelect.appendChild(option);
+
+        
+
+        const date=new Date(selectedValue);
+        console.log(date.getDay());
+        if(selectedValue==2){
+            timeSelect.disabled=true;
+        }
+       
+        else if(date.getDay()==6 ||date.getDay()==0){
+            for(let i=12;i<=22;i++){
+                for(let j=0;j<60;j+=30){
+                   timeSelect.disabled=false;
+                   const formatedDate=i+":"+(j===0?'00':j);
+                   const option=document.createElement('option');
+                   option.value=formatedDate;
+                   option.text=formatedDate;
+                   timeSelect.appendChild(option);
+                }
+            }
+        }
+        else{
+            for(let i=17;i<=22;i++){
+                for(let j=0;j<60;j+=30){
+                   timeSelect.disabled=false;
+                   const formatedDate=i+":"+(j===0?'00':j);
+                   const option=document.createElement('option');
+                   option.value=formatedDate;
+                   option.text=formatedDate;
+                   timeSelect.appendChild(option);
+                }
+            }
+        }
+        }
+
+    
+    function formatDate(date){
+        var options={weekday:"long",year:"numeric",month:"long",day:"numeric"}
+        return date.toLocaleDateString('en-US', options);
+    }
+    
     let cartItems=[];
     var myCarousel = new bootstrap.Carousel(document.getElementById('myCarousel'), {
         interval: false,
         wrap: false
     });
 
+
     function goToOrderPage(){
         window.location.href='orderOnline.html'
     }
 
-   
+    function tableReservation(){
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('customDialog').style.display = 'block';
+    }
+
+    function closeDialog() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('customDialog').style.display = 'none';
+        
+    }
+
+    function confirmReservation(){
+        document.getElementById('confirmDialog').style.display = 'block';
+    }
+    function closeconfirmDialog(){
+        document.getElementById('confirmDialog').style.display = 'none';
+    }
 
     function goToHome(){
         window.location.href='index.html'

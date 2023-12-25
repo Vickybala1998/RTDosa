@@ -101,6 +101,7 @@ li{
     
 }
 .nav-btn{
+    width: auto;
     border: none;
     background-color: brown ;
     color:white;
@@ -415,7 +416,6 @@ body{
 /*tableReservation style*/
 
 .reservation-form{
-    
     margin-top: 5%;
 }
 .input-group{
@@ -428,7 +428,7 @@ body{
 
 @media screen and (max-width:1062px){
     .banner{
-        height: 70vh;
+        height: auto;
         width:100vw;
         padding: 2.5vh 0;
     }
@@ -440,11 +440,14 @@ body{
         font-size: 1em;
     }
 
-    
     .homeNav a{
-        font-size: 0.8em;
-        
+        font-size: 0.8em;   
     }
+
+    .nav-btn{
+        font-size: 0.8em;   
+    }
+
     .contact{
         height:100%;
     }
@@ -511,8 +514,6 @@ body{
         width:35vw;
         margin-bottom:2%;
     }
-
-  
     .homeNav a:not(.icon) {
         display: none;
     }
@@ -540,15 +541,34 @@ body{
      .homeNav.responsive a {
         float: none;
         display: block;
-        text-align: left;
+        text-align: center;
         transition: 0.5s fade-in;
+        margin-bottom: 2%;
     }
     .homeNav.responsive ul {
         display: flex;
         flex-direction: column;
     }
     .homeNav.responsive button{
-        width:25vw;
+        width:auto;
+    }
+    .input-group{
+        width:auto;
+        margin-left: 0vw;
+        border: 2px 2px black;
+        border-radius: 5px;
+    }
+    .input-group i{
+        font-size: 5vw;
+    }
+    .input-group select{
+        font-size: 5vw;
+    }
+    #confirmDialog{
+        width: 100vw;
+    }
+    #confirmDialog p{
+        font-size: 5vw;
     }
 }
 

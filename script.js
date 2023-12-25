@@ -105,6 +105,10 @@
         wrap: false
     });
 
+    function toggleNavbar(){
+        const navbar=document.getElementById("homeNav");
+        navbar.classList.toggle('responsive');
+    }
 
     function goToOrderPage(){
         window.location.href='orderOnline.html'

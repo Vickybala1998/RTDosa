@@ -76,6 +76,12 @@ body{
     z-index: 2;
     transition: background-color 0.3s ease;
 }
+
+
+.icon{
+    display: none;
+}
+
 ul{
     list-style: none;
     display: flex;
@@ -422,7 +428,7 @@ body{
 
 @media screen and (max-width:1062px){
     .banner{
-        height: 45vh;
+        height: 70vh;
         width:100vw;
         padding: 2.5vh 0;
     }
@@ -433,8 +439,11 @@ body{
     .banner p{
         font-size: 1em;
     }
+
+    
     .homeNav a{
         font-size: 0.8em;
+        
     }
     .contact{
         height:100%;
@@ -503,6 +512,43 @@ body{
         margin-bottom:2%;
     }
 
-    
+  
+    .homeNav a:not(.icon) {
+        display: none;
+    }
+
+    .homeNav a.icon {
+        display: block;
+        left: 0;
+        position: absolute;
+        font-size: larger;
+    }
+
+    .homeNav.responsive {
+        position: relative;
+        background-color: rgb(224, 65, 65);
+        height: auto;
+        transition: background-color 0.7s ease;
+    }
+
+    .homeNav.responsive a.icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+     .homeNav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        transition: 0.5s fade-in;
+    }
+    .homeNav.responsive ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .homeNav.responsive button{
+        width:25vw;
+    }
 }
 

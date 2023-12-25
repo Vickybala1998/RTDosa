@@ -18,19 +18,23 @@
 
 <body onscroll="scrollFunction()">
     <header class="banner" id="home">
-        <nav class="homeNav">
+        <nav class="homeNav" id="homeNav">
             <ul>
+                <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()"> &#9776;</a>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#Menu">Menu</a></li>
                 <li><a href="#galleryItems">Gallery</a></li>
-                <li><a href="#Contactus">Contact</a></li>
-                <button class="nav-btn" onclick="goToOrderPage()">Order Online</button>
-                <button class="nav-btn" onclick="tableReservation()">Table Reservation</button>
+                <li><a href="#Contactus">Contact</a></li><br>
+                <button class="nav-btn" onclick="goToOrderPage()">Order Online</button><br>
+                <button class="nav-btn" onclick="tableReservation()">Table Reservation</button><br>
+                
             </ul>
 
         </nav>
-        <h1>RT Dosa Indian Restaurant</h1>
-        <h2>South Indian & SriLankan Cusine</h2>
+        <div class="restname">
+            <h1>RT Dosa Indian Restaurant</h1>
+            <h2>South Indian & SriLankan Cusine</h2>
+        </div>
     </header>
 
     <div>

@@ -15,7 +15,7 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body id="paymentPage" onload="checkboxchanged('collection')">
     <div class="makePayment">
         <label>
             <input type="radio" class="form-check-input" id="collection" name="collection" value="collection"  onchange="checkboxchanged('collection')" checked>
@@ -27,16 +27,13 @@
         </label>
         <div class="contactDetails" id="contactDetails">
             <label class="form-label">
-             Name<input type="text" id="name" class="form-control">
-                
+             Name<input type="text" id="name" class="form-control">    
             </label>
             <label class="form-label">
-                Phone Number<input type="text" id="phoneNum" class="form-control">
-                
+                Phone Number<input type="tel" id="phoneNum" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control">
             </label>
             <label class="form-label">
                 Address<input type="text" id="phoneNum" class="form-control">
-                
             </label>
         </div>
         <div id="totalAmount" class="totalAmount"></div>

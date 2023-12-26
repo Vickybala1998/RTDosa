@@ -2,56 +2,61 @@
 let cartItems = [];
 let totalAmount = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
-    const personSelect = document.getElementById('personSelect')
-    const option = document.createElement('option');
-    option.value = 0;
-    option.text = 'select no of persons';
-    personSelect.appendChild(option);
+this.document.addEventListener('DOMContentLoaded', function () {
+    const currentPage = document.querySelector('body').id;
+    console.log(currentPage);
 
-    for (let i = 2; i <= 10; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.text = i + 'persons';
-        personSelect.appendChild(option);
+    if (currentPage === 'tableReservation') {
+        const personSelect = document.getElementById('personSelect')
+        const option1 = document.createElement('option');
+        option1.value = 0;
+        option1.text = 'select no of persons';
+        personSelect.appendChild(option1);
+
+        for (let i = 2; i <= 10; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.text = i + 'persons';
+            personSelect.appendChild(option);
+        }
+
+        //dateselect function
+        const dateSelect = document.getElementById('dateSelect');
+        const currentDate = new Date()
+        const option2 = document.createElement('option');
+        option2.value = 0;
+        option2.text = 'select a date';
+        dateSelect.appendChild(option2);
+
+        const timeSelect = document.getElementById('timeSelect');
+        const options = document.createElement('option');
+        options.value = 0;
+        options.text = 'Select a Time';
+        timeSelect.appendChild(options);
+
+        for (let i = 0; i <= 20; i++) {
+            const date = new Date(currentDate);
+            date.setDate(currentDate.getDate() + i);
+            const option = document.createElement('option');
+            if (date.getDay() == 2) {
+                option.value = 2;
+                option.text = 'Closed';
+            }
+            else {
+                option.value = formatDate(date);
+                option.text = formatDate(date);
+            }
+
+            dateSelect.appendChild(option);
+        }
+
+        dateSelect.addEventListener('change', function () {
+            const selectedValue = dateSelect.value;
+            populateTime(selectedValue);
+        })
     }
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dateSelect = document.getElementById('dateSelect');
-    const currentDate = new Date()
-    const option = document.createElement('option');
-    option.value = 0;
-    option.text = 'select a date';
-    dateSelect.appendChild(option);
-
-    const timeSelect = document.getElementById('timeSelect');
-    const options = document.createElement('option');
-    options.value = 0;
-    options.text = 'Select a Time';
-    timeSelect.appendChild(options);
-
-    for (let i = 0; i <= 20; i++) {
-        const date = new Date(currentDate);
-        date.setDate(currentDate.getDate() + i);
-        const option = document.createElement('option');
-        if (date.getDay() == 2) {
-            option.value = 2;
-            option.text = 'Closed';
-        }
-        else {
-            option.value = formatDate(date);
-            option.text = formatDate(date);
-        }
-
-        dateSelect.appendChild(option);
-    }
-
-    dateSelect.addEventListener('change', function () {
-        const selectedValue = dateSelect.value;
-        populateTime(selectedValue);
-    })
-})
 
 function populateTime(selectedValue) {
     const timeSelect = document.getElementById('timeSelect');
@@ -61,9 +66,6 @@ function populateTime(selectedValue) {
     option.value = 0;
     option.text = 'Select a Time';
     timeSelect.appendChild(option);
-
-
-
     const date = new Date(selectedValue);
     console.log(date.getDay());
     if (selectedValue == 2) {
@@ -209,7 +211,12 @@ function checkboxchanged(checkboxName) {
     const totalAmounts = document.getElementById('totalAmount');
     const itemAmount = localStorage.getItem('ItemAmount');
     const itemElement = document.createElement('div');
-    totalAmounts.innerHTML = '';
+    itemElement.innerHTML = `
+    <div>
+    <p>Item Amount<span>£${itemAmount}</span></p>
+    <p>Total Amount<span>£${itemAmount}</span></p>
+    </div>`;
+    totalAmounts.appendChild(itemElement);
 
     if (checkboxName === 'collection' && collection.checked) {
         delivery.checked = false;
@@ -219,16 +226,16 @@ function checkboxchanged(checkboxName) {
         console.log("delivery");
         collection.checked = false;
         contactDetails.style.display = 'block';
-    }else if(checkboxName === 'collection' && ! collection.checked){
+    } else if (checkboxName === 'collection' && !collection.checked) {
         delivery.checked = true;
         contactDetails.style.display = 'block';
     }
-    else if(checkboxName === 'delivery' && !delivery.checked){
+    else if (checkboxName === 'delivery' && !delivery.checked) {
         collection.checked = true;
         contactDetails.style.display = 'none';
     }
-    if ( collection.checked) {
-        
+    if (collection.checked) {
+        totalAmounts.innerHTML = '';
         itemElement.innerHTML = `
         <div>
         <p>Item Amount<span>£${itemAmount}</span></p>
@@ -237,12 +244,18 @@ function checkboxchanged(checkboxName) {
         totalAmounts.appendChild(itemElement);
     }
     else if (delivery.checked) {
+        totalAmounts.innerHTML = '';
         itemElement.innerHTML = `
         <p>Item Amount<span>£${itemAmount}</span></p>
         <p>Delivery Charge<span>£2.00</span>
-        <p>Total Amount<span>£${itemAmount + 2.00}</span>`;
+        <p>Total Amount<span>£${parseFloat(itemAmount)+2}</span>`;
         totalAmounts.appendChild(itemElement);
     }
-    
+
+}
+function paymentDialog() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('payment').style.display = 'none';
+    localStorage.removeItem('ItemAmount');
 
 }
